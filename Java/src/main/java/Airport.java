@@ -1,8 +1,8 @@
-import Planes.ExperimentalPlane;
-import models.MilitaryType;
-import Planes.MilitaryPlane;
-import Planes.PassengerPlane;
-import Planes.Plane;
+import planes.ExperimentalPlane;
+import types.MilitaryTypes;
+import planes.MilitaryPlane;
+import planes.PassengerPlane;
+import planes.Plane;
 
 import java.util.*;
 
@@ -54,7 +54,7 @@ public class Airport {
     List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
     for (int i = 0; i < militaryPlanes.size(); i++) {
     MilitaryPlane plane = militaryPlanes.get(i);
-    if (plane.getType() == MilitaryType.TRANSPORT) {
+    if (plane.getType() == MilitaryTypes.TRANSPORT) {
     transportMilitaryPlanes.add(plane);
     }
     }
@@ -66,7 +66,7 @@ public class Airport {
         List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
         for (int i = 0; i < militaryPlanes.size(); i++) {
             MilitaryPlane plane = militaryPlanes.get(i);
-            if (plane.getType() == MilitaryType.BOMBER) {
+            if (plane.getType() == MilitaryTypes.BOMBER) {
                 bomberMilitaryPlanes.add(plane);
             }
         }
@@ -131,7 +131,7 @@ public class Airport {
     @Override
     public String toString() {
         return "Airport{" +
-                "Planes=" + planes.toString() +
+                "planes=" + planes.toString() +
                 '}';
     }
 
