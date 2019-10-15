@@ -18,7 +18,9 @@ public class Airport {
     public List<PassengerPlane> getPassengerPlanes() {
         List<? extends Plane> planes = this.planes;
         List<PassengerPlane> passengerPlane = new ArrayList<>();
-        for (Plane plane : planes) {if (plane instanceof PassengerPlane) {passengerPlane.add((PassengerPlane) plane);}}
+        for (Plane plane : planes) {
+            if (plane instanceof PassengerPlane) {
+                passengerPlane.add((PassengerPlane) plane);}}
         return passengerPlane;
     }
 
@@ -50,12 +52,12 @@ public class Airport {
     }
 
     public List<MilitaryPlane> getTransportMilitaryPlanes() {
-    List<MilitaryPlane> transportMilitaryPlanes = new ArrayList<>();
-    List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
-    for (int i = 0; i < militaryPlanes.size(); i++) {
-    MilitaryPlane plane = militaryPlanes.get(i);
-    if (plane.getType() == MilitaryTypes.TRANSPORT) {
-    transportMilitaryPlanes.add(plane);
+        List<MilitaryPlane> transportMilitaryPlanes = new ArrayList<>();
+        List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
+        for (int i = 0; i < militaryPlanes.size(); i++) {
+            MilitaryPlane plane = militaryPlanes.get(i);
+                if (plane.getType() == MilitaryTypes.TRANSPORT) {
+                    transportMilitaryPlanes.add(plane);
     }
     }
     return transportMilitaryPlanes;
